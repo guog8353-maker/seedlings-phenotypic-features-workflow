@@ -1,0 +1,38 @@
+# 32 个基础模型默认参数
+models:
+  - name: GBM
+  - name: PLR
+  - name: KNN
+    params:
+      n_neighbors: 5
+  - name: XGBoost
+  - name: RPART
+  - name: NB
+  - name: avNNET
+  - name: LDA
+  - name: PLS
+    params:
+      n_components: 2
+  - name: svmRADIAl
+  - name: svmLinear
+  - name: svmPoly
+  - name: Glmnet
+  - name: KKNN
+  - name: C5.0
+  - name: EARTH
+  - name: Treebag
+  - name: QDA
+  - name: MDA
+  - name: FDA
+  - name: RidgeClassifier
+  - name: ExtraTrees
+  - name: HistGradientBoosting
+  - name: XGBoost-DART
+  - name: MLP
+  - name: ElasticNet
+  - name: catboost
+  - name: Bagging
+  - name: AdaBoost
+  - name: LightGBM
+  - name: LightGBM-DART
+  - name: RandomForest

@@ -1,0 +1,13 @@
+# AutoML 配置
+frameworks:
+  - H2O
+  - AutoGluon
+  - FLAML
+
+common_params:
+  time_limit: 600
+  random_state: 42
+
+framework_params:
+  AutoGluon:
+    output_dir: outputs/autogluon

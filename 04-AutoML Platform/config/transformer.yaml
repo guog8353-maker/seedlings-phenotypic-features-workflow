@@ -1,0 +1,16 @@
+# Transformer 配置
+transformers:
+  - FT-Transformer
+  - TabTransformer
+  - SAINT
+
+common_params:
+  num_epochs: 50
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.00001
+  dropout: 0.1
+  dim: 32
+  depth: 4
+  heads: 8
+  random_state: 42

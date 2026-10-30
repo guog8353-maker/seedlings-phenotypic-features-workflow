@@ -1,0 +1,55 @@
+# AutoML-Platform GPU 环境（automl-platform-gpu）
+# 硬件目标：NVIDIA RTX 4060（sm_89, Ada Lovelace），驱动 >= 550（支持 CUDA 13.x）
+# 说明：PyTorch 使用官方 cu128 wheel（自带 CUDA 12.8 运行库，无需单独装 CUDA Toolkit）。
+# 安装：conda env create -f environment_gpu.yml
+name: automl-platform-gpu
+channels:
+  - defaults
+dependencies:
+  - python=3.12.13
+  - pip
+  - pip:
+    # --- GPU 版 PyTorch（cu128 wheel） ---
+    - --index-url https://download.pytorch.org/whl/cu128
+    - --extra-index-url https://pypi.org/simple
+    - torch==2.9.1
+    - torchvision==0.24.1
+    - torchaudio==2.9.1
+
+    # --- GPU 可直接使用的树模型 ---
+    - xgboost==3.1.3      # wheel 自带 GPU 支持
+    - catboost==1.2.10    # 自带 GPU 支持（Windows 开箱即用）
+
+    # --- 其余依赖（与现生产环境版本一致） ---
+    # 注意：autogluon 1.5.0 会将 scikit-learn 钉到 1.7.2；
+    # scikit-survival 0.27.0 名义上要求 sklearn>=1.8，但代码中并未 import sksurv，
+    # 该冲突仅为元数据警告、无运行时影响，与现生产环境状态一致。
+    - lightgbm==4.6.0     # Windows 官方 wheel 仅 CPU
+    - autogluon==1.5.0
+    - h2o==3.46.0.10      # Java 后端，Windows 不支持 GPU
+    - FLAML==2.6.0
+    - shap==0.51.0
+    - optuna==4.8.0
+    - scikit-learn==1.7.2
+    - scikit-survival==0.27.0
+    - pandas==2.3.3
+    - numpy==2.3.5
+    - scipy==1.16.3
+    - PyQt6==6.11.0
+    - matplotlib==3.10.9
+    - seaborn==0.13.2
+    - statsmodels==0.14.6
+    - lifelines==0.30.3
+    - imbalanced-learn==0.14.1
+    - Boruta==0.4.3
+    - deap==1.4.4
+    - openpyxl==3.1.5
+    - loguru==0.7.3
+    - PyYAML==6.0.3
+    - Markdown==3.10.2
+    - pygam==0.12.0
+    - pyreadstat==1.3.4
+    - joblib==1.5.3
+    - numba==0.65.1
+    - python-docx==1.2.0   # Word 报告导出
+    - lxml==6.1.1          # python-docx 依赖

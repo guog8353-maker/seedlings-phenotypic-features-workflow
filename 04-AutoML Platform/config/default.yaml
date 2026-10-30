@@ -1,0 +1,43 @@
+# AutoML-Platform 默认全局配置
+
+project:
+  name: "AutoML-Platform"
+  version: "0.1.0"
+  output_dir: "./outputs"
+  random_state: 42
+
+logging:
+  level: "INFO"
+  log_dir: "./outputs/logs"
+  rotation: "10 MB"
+  retention: "30 days"
+
+data:
+  supported_extensions: [".csv", ".xlsx", ".xls", ".sas7bdat", ".sav", ".dta"]
+  max_rows_preview: 1000
+  max_cols_preview: 100
+
+preprocessing:
+  missing_strategy: "median"  # median, mean, mode, knn, mice, drop
+  outlier_method: "iqr"       # iqr, zscore, winsorize, none
+  encoding: "label"           # label, ordinal, target; disable one-hot
+  scaling: "standard"         # standard, minmax, robust, none
+  imbalance_method: "none"    # smote, adasyn, undersample, class_weight, none
+
+feature_selection:
+  methods: ["LASSO", "Boruta", "RFE", "MutualInformation", "stepAIC", "SCAD", "GA"]
+  consensus_threshold: 3
+  n_jobs: -1
+
+modeling:
+  cv_folds: 5
+  n_trials_optuna: 50
+  metric: "roc_auc"
+  use_oof: true
+  fit_final_on_full_data: true
+
+sampling:
+  weight_col: "weight"
+  strata_col: "strata"
+  psu_col: "psu"
+  enable_weighted_analysis: true

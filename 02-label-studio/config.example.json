@@ -1,0 +1,15 @@
+{
+  "workspace": "",
+  "output_dir": "output",
+  "cols": 36,
+  "rows": 18,
+  "presets": [
+    [36, 18],
+    [41, 20],
+    [48, 28]
+  ],
+  "brush_radius": 25,
+  "show_grid": true,
+  "mask_threshold": 0.01,
+  "multi_grids_text": "36x18,41x20,48x28"
+}

@@ -1,0 +1,28 @@
+# 集成学习方法配置
+methods:
+  - SimpleAverage
+  - WeightedAverage
+  - GASelection
+  - Stacking
+  - CaruanaEnsembleSelection
+  - CaruanaOptimized
+  - SuperLearner
+  - HardVoting
+
+method_params:
+  GASelection:
+    population_size: 50
+    generations: 30
+  Stacking:
+    meta_learners:
+      - LR
+      - GBM
+      - RF
+      - MLP
+    cv: 5
+  CaruanaEnsembleSelection:
+    metric: auc
+  CaruanaOptimized:
+    max_models: null
+  SuperLearner:
+    cv: 5

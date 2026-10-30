@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local settings
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+02-label-studio/config.json
+
+# Logs and temporary launch output
+logs/
+*.log
+
+# Stitching diagnostics and retries
+debug/
+debug_frames/
+debug_attempts/
+batch_verify/
+
+# Generated datasets, features and reports
+output/
+feature_output/
+/features/
+/03-feature-lab/features/
+data/
+datasets/
+batch_report.csv
+batch_report.json
+labels.csv
+labels_merged.csv
+features.csv
+features_meta.json
+feature_report.json
+rectify_info.json
+
+# Local databases and large archival/input files
+*.sqlite
+*.sqlite3
+*.parquet
+*.mp4
+*.7z
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Credentials and local experiment artifacts
+*.pem
+*.key
+credentials*.json
+*.db
+outputs/
+models_ckpt/
+AutogluonModels/
+catboost_info/
+checkpoints/

@@ -1,0 +1,3 @@
+# 在 GUI 依赖之上增加 Parquet 批处理输出支持
+-r requirements.txt
+pyarrow>=14.0

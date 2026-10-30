@@ -1,0 +1,6 @@
+# RiceScan Stitcher 依赖（建议 Python 3.12）
+
+PySide6>=6.0
+opencv-python>=4.8
+numpy>=1.26
+Pillow>=10.0

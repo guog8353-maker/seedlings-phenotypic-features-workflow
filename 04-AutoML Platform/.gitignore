@@ -1,0 +1,23 @@
+# ---- 运行产物（不入库）----
+outputs/
+DATA/
+models_ckpt/
+AutogluonModels/
+catboost_info/
+checkpoints/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.python/
+
+# ---- 实验数据库与日志 ----
+*.db
+*.log
+logs/
+
+# ---- 系统文件 ----
+.DS_Store
+Thumbs.db
