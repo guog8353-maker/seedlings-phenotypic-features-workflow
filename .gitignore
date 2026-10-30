@@ -29,7 +29,7 @@ output/
 feature_output/
 /features/
 /03-feature-lab/features/
-data/
+# data/ is versioned through Git LFS (see .gitattributes)
 datasets/
 batch_report.csv
 batch_report.json
